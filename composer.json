@@ -1,0 +1,21 @@
+{
+    "name": "beesline/exports-website",
+    "description": "Bees Line Exports - Premium Business Website with Contact Form",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "authors": [
+        {
+            "name": "Bees Line Exports",
+            "email": "info@beeslineexport.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

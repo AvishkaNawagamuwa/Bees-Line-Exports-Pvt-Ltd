@@ -1,0 +1,574 @@
+/* ===================================
+   Bees Line Exports - Custom Styles
+   Premium Light Theme
+   =================================== */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+}
+
+/* Gradient Text */
+.text-gradient {
+    background: linear-gradient(135deg, #F4B400 0%, #F2994A 50%, #D3543A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #F4B400 0%, #F2994A 50%, #D3543A 100%);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: left 0.5s ease;
+}
+
+.btn-gradient:hover::before {
+    left: 100%;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(244, 180, 0, 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #F4B400 0%, #F2994A 100%);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.btn-outline:hover::before {
+    width: 100%;
+}
+
+/* Honeycomb Background Pattern */
+.honeycomb-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image:
+        repeating-linear-gradient(30deg, #F4B400 0px, #F4B400 2px, transparent 2px, transparent 10px),
+        repeating-linear-gradient(150deg, #F2994A 0px, #F2994A 2px, transparent 2px, transparent 10px),
+        repeating-linear-gradient(90deg, #D3543A 0px, #D3543A 2px, transparent 2px, transparent 10px);
+    pointer-events: none;
+}
+
+/* Navbar Styles */
+#navbar {
+    transition: all 0.3s ease;
+}
+
+#navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #F4B400, #F2994A);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Product Cards */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card:hover .bg-white {
+    box-shadow: 0 20px 60px rgba(244, 180, 0, 0.15);
+    border-color: #F4B400;
+}
+
+/* Filter Buttons */
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    border: 2px solid #EAEAEA;
+    background: white;
+    color: #666666;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: #F4B400;
+    color: #F4B400;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 180, 0, 0.2);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #F4B400 0%, #F2994A 100%);
+    border-color: #F4B400;
+    color: white;
+    box-shadow: 0 4px 15px rgba(244, 180, 0, 0.3);
+}
+
+/* Certificate Cards */
+.cert-card {
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border: 2px solid #F4B400;
+}
+
+/* Modal Animations */
+.modal-content {
+    animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Product Grid Filtering */
+.product-card.hidden {
+    display: none;
+}
+
+.product-card.visible {
+    display: block;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Inputs */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+input,
+select,
+textarea {
+    transition: all 0.3s ease;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-circle-notch.fa-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Toast Animation */
+#toast.show {
+    transform: translateX(0);
+}
+
+/* Smooth Scroll Reveal */
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F7F7F7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #F4B400, #F2994A);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #F2994A, #D3543A);
+}
+
+/* Pulse Animation for badges */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hover Effects for Images */
+img {
+    transition: transform 0.5s ease;
+}
+
+/* Card Border Glow */
+@keyframes borderGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(244, 180, 0, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(244, 180, 0, 0.4);
+    }
+}
+
+.product-card:hover .bg-white {
+    animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero-product-showcase {
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Button Ripple Effect */
+.btn-gradient {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gradient::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-gradient:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Section Transitions */
+section {
+    position: relative;
+}
+
+/* Gradient Overlay for CTA */
+.gradient-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 1s ease;
+}
+
+.gradient-overlay:hover::before {
+    left: 100%;
+}
+
+/* Link Hover Effects */
+a {
+    transition: all 0.3s ease;
+}
+
+/* Icon Hover */
+.fa,
+.fas,
+.fab {
+    transition: transform 0.3s ease;
+}
+
+a:hover .fa,
+a:hover .fas,
+a:hover .fab,
+button:hover .fa,
+button:hover .fas,
+button:hover .fab {
+    transform: scale(1.1);
+}
+
+/* Premium Shadow */
+.shadow-premium {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.hover\:shadow-premium:hover {
+    box-shadow: 0 20px 60px rgba(244, 180, 0, 0.15);
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(10px)) {
+    #navbar {
+        backdrop-filter: blur(10px);
+    }
+
+    #product-modal,
+    #success-modal,
+    #cert-modal {
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #F4B400;
+    outline-offset: 4px;
+}
+
+/* Print Styles */
+@media print {
+
+    #navbar,
+    footer,
+    .btn-gradient,
+    .filter-btn {
+        display: none;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .text-gradient {
+        -webkit-text-fill-color: #F4B400;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Loading State */
+.loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Success State */
+.success-border {
+    border: 2px solid #10B981 !important;
+}
+
+/* Error State */
+.error-border {
+    border: 2px solid #EF4444 !important;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#mobile-menu.active {
+    max-height: 500px;
+}
+
+/* Gradient Borders */
+.gradient-border {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #F4B400, #F2994A, #D3543A);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, #F7F7F7 0px, #FFFFFF 40px, #F7F7F7 80px);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Utilities */
+.blur-sm {
+    filter: blur(4px);
+}
+
+.blur-md {
+    filter: blur(8px);
+}
+
+.blur-lg {
+    filter: blur(16px);
+}
+
+/* Z-index Management */
+#navbar {
+    z-index: 1000;
+}
+
+#product-modal,
+#success-modal,
+#cert-modal {
+    z-index: 2000;
+}
+
+#toast {
+    z-index: 3000;
+}
